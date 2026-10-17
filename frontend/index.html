@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Assignment Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            📚 Assignment Tracker
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#assignments">Assignments</a>
+        </div>
+    </nav>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <div>
+                <p class="welcome-small">WELCOME BACK 👋</p>
+                <h1>Student Assignment Tracker</h1>
+                <p>
+                    Organize your assignments, track deadlines,
+                    and stay productive.
+                </p>
+            </div>
+
+            <button class="add-btn" onclick="openForm()">
+                + Add Assignment
+            </button>
+        </section>
+        <section class="stats">
+
+            <div class="stat-card">
+                <span class="stat-icon">📚</span>
+                <div>
+                    <p>Total Assignments</p>
+                    <h2 id="totalCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">⏳</span>
+                <div>
+                    <p>Pending</p>
+                    <h2 id="pendingCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">⚡</span>
+                <div>
+                    <p>In Progress</p>
+                    <h2 id="progressCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">✅</span>
+                <div>
+                    <p>Completed</p>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+
+        </section>
+        <section class="form-section" id="assignmentForm">
+
+            <div class="section-heading">
+                <div>
+                    <p class="heading-small">CREATE NEW</p>
+                    <h2>Add Assignment</h2>
+                </div>
+            </div>
+
+            <form id="addAssignmentForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Assignment Title</label>
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="e.g. AI Research Report"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="e.g. Artificial Intelligence"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <input
+                            type="date"
+                            id="dueDate"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+
+                        <select id="status">
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>Description</label>
+
+                    <textarea
+                        id="description"
+                        rows="4"
+                        placeholder="Write a short description..."
+                        required
+                    ></textarea>
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Add Assignment
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <section class="assignments-section" id="assignments">
+
+            <div class="section-heading">
+                <div>
+                    <p class="heading-small">YOUR WORK</p>
+                    <h2>My Assignments</h2>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Search assignments..."
+                >
+            </div>
+            <div id="assignmentList" class="assignment-list">
+
+                <div class="empty-state">
+                    <div>📋</div>
+                    <h3>No assignments yet</h3>
+                    <p>Add your first assignment to get started.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
